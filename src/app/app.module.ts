@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
-import {MdSidenavModule} from '@angular/material';
+import {MdButtonModule, MdIconModule, MdSidenavModule} from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -12,7 +12,9 @@ import {MdSidenavModule} from '@angular/material';
     imports: [
         BrowserModule,
         CoreModule,
-        MdSidenavModule
+        MdSidenavModule,
+        MdIconModule,
+        MdButtonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
