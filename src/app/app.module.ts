@@ -3,7 +3,9 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
-import {MdButtonModule, MdIconModule, MdSidenavModule} from '@angular/material';
+import {SharedModule} from './shared/shared.module';
+import {AppRoutingModule} from './app-routing.module';
+import {LoginModule} from './login/login.module';
 
 @NgModule({
     declarations: [
@@ -12,9 +14,9 @@ import {MdButtonModule, MdIconModule, MdSidenavModule} from '@angular/material';
     imports: [
         BrowserModule,
         CoreModule,
-        MdSidenavModule,
-        MdIconModule,
-        MdButtonModule
+        SharedModule,
+        AppRoutingModule,
+        LoginModule
     ],
     providers: [],
     bootstrap: [AppComponent]
