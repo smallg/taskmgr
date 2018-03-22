@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../domain/user';
 
 @Component({
     selector: 'app-invite',
