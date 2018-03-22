@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {NewProjectComponent} from '../new-project/new-project.component';
+import {InviteComponent} from '../invite/invite.component';
 
 @Component({
     selector: 'app-project-list',
@@ -13,7 +14,7 @@ export class ProjectListComponent implements OnInit {
         {'name': '测试平台', 'desc': '这是一个测试平台', 'coverImg': '/assets/img/covers/1.jpg'}
     ];
 
-    constructor(private dialog: MdDialog) {
+    constructor(private dialog: MatDialog) {
     }
 
     ngOnInit() {
@@ -22,6 +23,10 @@ export class ProjectListComponent implements OnInit {
     openNewProjectDialog() {
         const dialogRef = this.dialog.open(NewProjectComponent, {data: {dark: true}});
         dialogRef.afterClosed().subscribe(result => console.log(result));
+    }
+
+    launchInviteDialog() {
+        this.dialog.open(InviteComponent);
     }
 
 }

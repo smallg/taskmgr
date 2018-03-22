@@ -1,3 +1,18 @@
-<p>
-  invite works!
-</p>
+<form>
+    <h2 mat-dialog-title>邀请组员</h2>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <input matInput type="text" placeholder="组员姓名" [matAutocomplete]="auto"/>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let item of items" [value]="item.name">
+                    {{item.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button type="button" mat-raised-button color="primary" (click)="save()">保存</button>
+        <button type="button" mat-button mat-dialog-close>关闭</button>
+    </div>
+</form>
+

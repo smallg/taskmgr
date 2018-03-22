@@ -1,25 +1,25 @@
-<md-card>
-    <md-card-header>
-        <md-card-title>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
             {{item.name}}
-        </md-card-title>
-    </md-card-header>
-    <img md-card-image [src]="item.coverImg" alt="封面"/>
-    <md-card-content>
+        </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="item.coverImg" alt="封面"/>
+    <mat-card-content>
         {{item.desc}}
-    </md-card-content>
-    <md-card-actions>
-        <button md-button type="button">
-            <md-icon>note</md-icon>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button type="button">
+            <mat-icon>note</mat-icon>
             <span>编辑</span>
         </button>
-        <button md-button type="button">
-            <md-icon>group_add</md-icon>
+        <button mat-button type="button" (click)="onInviteClick()">
+            <mat-icon>group_add</mat-icon>
             <span>邀请</span>
         </button>
-        <button md-button type="button">
-            <md-icon>delete</md-icon>
+        <button mat-button type="button">
+            <mat-icon>delete</mat-icon>
             <span>删除</span>
         </button>
-    </md-card-actions>
-</md-card>
+    </mat-card-actions>
+</mat-card>
