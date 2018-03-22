@@ -11,6 +11,8 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 import {loadSvgResources} from '../utils/svg.util';
 import {HttpClientModule} from '@angular/common/http';
 
+import 'hammerjs';
+
 @NgModule({
     imports: [
         HttpClientModule,
