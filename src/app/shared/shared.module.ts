@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 import {
     MatButtonModule,
     MatIconModule,
@@ -11,11 +12,20 @@ import {
     MatListModule,
     MatGridListModule,
     MatDialogModule,
-    MatAutocompleteModule, MatFormFieldModule, MatMenuModule, MatCheckboxModule, MatTooltipModule
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
 } from '@angular/material';
 
 @NgModule({
     imports: [
+        FormsModule,
         CommonModule,
         MatFormFieldModule,
         MatToolbarModule,
@@ -31,9 +41,14 @@ import {
         MatAutocompleteModule,
         MatMenuModule,
         MatCheckboxModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatRadioModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule
     ],
     exports: [
+        FormsModule,
         CommonModule,
         MatFormFieldModule,
         MatToolbarModule,
@@ -49,7 +64,11 @@ import {
         MatAutocompleteModule,
         MatMenuModule,
         MatCheckboxModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatRadioModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule
     ],
     declarations: []
 })
