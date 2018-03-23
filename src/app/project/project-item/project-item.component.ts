@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener} from '@angular/core';
-import {cardAnimate} from '../../anims/card.anim';
+import {cardAnimate} from '../../animation/card.anim';
 
 @Component({
     selector: 'app-project-item',

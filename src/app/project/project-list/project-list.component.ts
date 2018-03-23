@@ -1,19 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {NewProjectComponent} from '../new-project/new-project.component';
 import {InviteComponent} from '../invite/invite.component';
-import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
+import {ConfirmDialogComponent} from '../../shared/confirm-dialog/confirm-dialog.component';
+import {slideToRight} from '../../animation/router.anim';
 
 @Component({
     selector: 'app-project-list',
     templateUrl: './project-list.component.html',
-    styleUrls: ['./project-list.component.scss']
+    styleUrls: ['./project-list.component.scss'],
+    animations: [
+        slideToRight
+    ]
 })
 export class ProjectListComponent implements OnInit {
     projects = [
         {'name': '企业写作平台', 'desc': '这是一个企业内部项目', 'coverImg': '/assets/img/covers/0.jpg'},
         {'name': '测试平台', 'desc': '这是一个测试平台', 'coverImg': '/assets/img/covers/1.jpg'}
     ];
+
+    @HostBinding('@routeAnim') state;
 
     constructor(private dialog: MatDialog) {
     }
