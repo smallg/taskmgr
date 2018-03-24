@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
     MatButtonModule,
     MatIconModule,
@@ -27,6 +27,7 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
 @NgModule({
     imports: [
         FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         MatFormFieldModule,
         MatToolbarModule,
@@ -50,6 +51,7 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
     ],
     exports: [
         FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         MatFormFieldModule,
         MatToolbarModule,
