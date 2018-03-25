@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {QuoteService} from '../../services/quote.service';
-import {Quote} from '../../domain/quote.module';
+import {Quote} from '../../domain/quote';
 
 @Component({
     selector: 'app-login',
@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
 
     constructor(private fb: FormBuilder, private quoteService$: QuoteService) {
         this.quoteService$.getQuote().subscribe(q => {
-            console.log(q);
             this.quote = q;
         });
     }
