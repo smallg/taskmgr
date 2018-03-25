@@ -24,9 +24,9 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>每日佳句</mat-card-title>
-            <mat-card-subtitle>xxx</mat-card-subtitle>
+            <mat-card-subtitle>{{quote.cn}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="/assets/img/quote_fallback.jpg" alt=""/>
-        <mat-card-content>xxxxx</mat-card-content>
+        <img mat-card-image [src]="quote.pic" alt="quote image"/>
+        <mat-card-content>{{quote.en}}</mat-card-content>
     </mat-card>
 </form>
