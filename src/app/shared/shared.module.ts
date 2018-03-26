@@ -20,10 +20,12 @@ import {
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
 } from '@angular/material';
 import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
-import {DirectiveModule} from "../directive/directive.module";
+import {DirectiveModule} from '../directive/directive.module';
+import {AgeInputComponent} from './age-input/index';
 
 @NgModule({
     imports: [
@@ -49,6 +51,7 @@ import {DirectiveModule} from "../directive/directive.module";
         MatDatepickerModule,
         MatNativeDateModule,
         MatSelectModule,
+        MatTabsModule,
         DirectiveModule
     ],
     exports: [
@@ -74,12 +77,17 @@ import {DirectiveModule} from "../directive/directive.module";
         MatDatepickerModule,
         MatNativeDateModule,
         MatSelectModule,
-        DirectiveModule
+        MatTabsModule,
+        DirectiveModule,
+        AgeInputComponent
     ],
     entryComponents: [
         ConfirmDialogComponent
     ],
-    declarations: [ConfirmDialogComponent]
+    declarations: [
+        ConfirmDialogComponent,
+        AgeInputComponent
+    ]
 })
 export class SharedModule {
 }

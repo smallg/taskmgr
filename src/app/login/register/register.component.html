@@ -1,31 +1,47 @@
-<form>
+<form [formGroup]="form">
     <mat-card>
-        <mat-card-header>
-            <mat-card-title>注册:</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <mat-input-container align="end" color="accent" class="full-width">
-                <input matInput type="text" placeholder="您的email"/>
-            </mat-input-container>
-            <mat-input-container align="end" color="accent" class="full-width">
-                <input matInput type="text" placeholder="您的姓名"/>
-            </mat-input-container>
-            <mat-input-container align="end" color="accent" class="full-width">
-                <input matInput type="password" placeholder="您的密码"/>
-            </mat-input-container>
-            <mat-input-container align="end" color="accent" class="full-width">
-                <input matInput type="password" placeholder="再次输入密码"/>
-            </mat-input-container>
-            <mat-grid-list cols="6">
-                <mat-grid-tile *ngFor="let item of items">
-                    <mat-icon class="avatar" [svgIcon]="item"></mat-icon>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <button type="button" color="primary" mat-raised-button>注册</button>
-        </mat-card-content>
-        <mat-card-actions class="text-right">
-            <p>还没有账号？<a href="">登录</a></p>
-            <p>忘记密码？<a href="">找回</a></p>
-        </mat-card-actions>
+        <mat-tab-group [dynamicHeight]="true" [selectedIndex]="selectedTab" (selectChange)="onTabChange($event.index)">
+            <mat-tab label="帐号信息">
+                <mat-input-container align="end" color="accent" class="full-width">
+                    <input matInput type="text" placeholder="您的email"/>
+                </mat-input-container>
+                <mat-input-container align="end" color="accent" class="full-width">
+                    <input matInput type="text" placeholder="您的姓名"/>
+                </mat-input-container>
+                <mat-input-container align="end" color="accent" class="full-width">
+                    <input matInput type="password" placeholder="您的密码"/>
+                </mat-input-container>
+                <mat-input-container align="end" color="accent" class="full-width">
+                    <input matInput type="password" placeholder="再次输入密码"/>
+                </mat-input-container>
+                <!--<app-image-list-select-->
+                    <!--[useSvgIcon]="true"-->
+                    <!--[cols]="6"-->
+                    <!--[title]="'选择头像：'"-->
+                    <!--[items]="avatars$ | async"-->
+                    <!--formControlName="avatar">-->
+                <!--</app-image-list-select>-->
+                <div class="full-width">
+                    <p>还没有账号？<a href="">登录</a></p>
+                    <p>忘记密码？<a href="">找回</a></p>
+                </div>
+                <button type="button" color="primary" mat-raised-button>注册</button>
+            </mat-tab>
+            <mat-tab label="个人信息">
+                <!--<app-indentity-input formControlName="identity" class="full-width control-padding"></app-indentity-input>-->
+                <div class="full-width control-padding">
+                    <!--<app-age-input formControlName="dateOfBirth"></app-age-input>-->
+                </div>
+                <div class="full-width control-padding">
+                    <!--<app-area-list formControlName="address"></app-area-list>-->
+                </div>
+                <div class="full-width">
+                    <button md-raised-button type="button" (click)="prevTab()">上一步</button>
+                    <button md-raised-button type="submit" [disabled]="!form.valid">注册</button>
+                    <span class="fill-remaining-space"></span>
+                    <span><span>已有账户？ <a routerLink="/login">登录</a></span><span>忘记 <a routerLink="/forgot">密码？</a></span></span>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
     </mat-card>
 </form>
