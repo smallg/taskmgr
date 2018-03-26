@@ -27,45 +27,8 @@ export interface Age {
 
 @Component({
     selector: 'app-age-input',
-    template: `
-        <div [formGroup]="form" class="age-input">
-            <div>
-                <mat-input-container>
-                    <input matInput [matDatepicker]="birthPicker" placeholder="出生日期" formControlName="birthday">
-                    <mat-datepicker-toggle matSuffix [for]="birthPicker"></mat-datepicker-toggle>
-                    <mat-datepicker #birthPicker></mat-datepicker>
-                </mat-input-container>
-                <mat-datepicker touchUi="true" #birthPicker></mat-datepicker>
-            </div>
-            <ng-container formGroupName="age">
-                <div class="age-num">
-                    <mat-input-container>
-                        <input matInput type="number" placeholder="年龄" formControlName="ageNum">
-                    </mat-input-container>
-                </div>
-                <div>
-                    <!--<mat-button-toggle-group formControlName="ageUnit" [(ngModel)]="selectedUnit">-->
-                        <!--<mat-button-toggle *ngFor="let unit of ageUnits" [value]="unit.value">-->
-                            <!--{{ unit.label }}-->
-                        <!--</mat-button-toggle>-->
-                    <!--</mat-button-toggle-group>-->
-                </div>
-                <mat-error class="mat-body-2" *ngIf="form.get('age').hasError('ageInvalid')">年龄或单位不正确</mat-error>
-            </ng-container>
-        </div>
-    `,
-    styles: [`
-        .age-num {
-            width: 50px;
-        }
-
-        .age-input {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            align-items: baseline;
-        }
-    `],
+    templateUrl: './age-input.component.html',
+    styleUrls: ['./age-input.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
@@ -99,7 +62,7 @@ export class AgeInputComponent implements ControlValueAccessor, OnInit, OnDestro
     @Input() debounceTime = 300;
     private subBirth: Subscription;
     private propagateChange = (_: any) => {
-    };
+    }
 
     constructor(private fb: FormBuilder) {
     }
@@ -202,7 +165,7 @@ export class AgeInputComponent implements ControlValueAccessor, OnInit, OnDestro
         const val = c.value;
         return isValidDate(val) ? null : {
             birthdayInvalid: true
-        }
+        };
     }
 
     validateAge(ageNumKey: string, ageUnitKey: string) {
@@ -214,15 +177,15 @@ export class AgeInputComponent implements ControlValueAccessor, OnInit, OnDestro
 
             switch (ageUnit.value) {
                 case AgeUnit.Year: {
-                    result = ageNumVal >= this.yearsBottom && ageNumVal <= this.yearsTop
+                    result = ageNumVal >= this.yearsBottom && ageNumVal <= this.yearsTop;
                     break;
                 }
                 case AgeUnit.Month: {
-                    result = ageNumVal >= this.monthsBottom && ageNumVal <= this.monthsTop
+                    result = ageNumVal >= this.monthsBottom && ageNumVal <= this.monthsTop;
                     break;
                 }
                 case AgeUnit.Day: {
-                    result = ageNumVal >= this.daysBottom && ageNumVal <= this.daysTop
+                    result = ageNumVal >= this.daysBottom && ageNumVal <= this.daysTop;
                     break;
                 }
                 default: {

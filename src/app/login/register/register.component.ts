@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
 
 @Component({
     selector: 'app-register',
@@ -13,7 +12,6 @@ export class RegisterComponent implements OnInit {
     selectedTab: 0;
     form: FormGroup;
     avatars$: Observable<string[]>;
-    private _sub: Subscription;
     private readonly avatarName = 'avatars';
 
     constructor(private fb: FormBuilder) {
@@ -46,6 +44,7 @@ export class RegisterComponent implements OnInit {
         if (!valid) {
             return;
         }
+        console.log('form value:', value);
     }
 
 }
