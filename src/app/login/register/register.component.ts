@@ -17,6 +17,10 @@ export class RegisterComponent implements OnInit {
     private readonly avatarName = 'avatars';
 
     constructor(private fb: FormBuilder) {
+        this.avatars$ = Observable
+            .range(1, 16)
+            .map(i => `${this.avatarName}:svg-${i}`)
+            .reduce((r, x) => [...r, x], []);
     }
 
     ngOnInit() {
@@ -35,6 +39,13 @@ export class RegisterComponent implements OnInit {
 
     onTabChange(index) {
         this.selectedTab = index;
+    }
+
+    onSubmit({value, valid}, e: Event) {
+        e.preventDefault();
+        if (!valid) {
+            return;
+        }
     }
 
 }

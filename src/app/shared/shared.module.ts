@@ -25,7 +25,7 @@ import {
 } from '@angular/material';
 import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
 import {DirectiveModule} from '../directive/directive.module';
-import {AgeInputComponent} from './age-input/index';
+import {ImageListSelectComponent} from './image-list-select/index';
 
 @NgModule({
     imports: [
@@ -79,14 +79,14 @@ import {AgeInputComponent} from './age-input/index';
         MatSelectModule,
         MatTabsModule,
         DirectiveModule,
-        AgeInputComponent
+        ImageListSelectComponent
     ],
     entryComponents: [
         ConfirmDialogComponent
     ],
     declarations: [
         ConfirmDialogComponent,
-        AgeInputComponent
+        ImageListSelectComponent
     ]
 })
 export class SharedModule {
